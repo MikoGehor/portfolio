@@ -1,53 +1,234 @@
-
 <!DOCTYPE html>
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miko Gehör – Portfolio</title>
-    assets/css/style.css
+    <meta name="description" content="Miko Markus Kristian Gehör - Ohjelmistokehittäjän portfolio">
+    <title>Miko Gehör - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-<header>
-    <nav class="container">
-        <div class="logo">Portfolio</div>
-        <ul>
-            <li>#heroEtusivu</a></li>
-            <li>#aboutTietoa</a></li>
-            <li>#educationKoulutus</a></li>
-            <li>#experienceTyökokemus</a></li>
-            <li>#projectProjekti</a></li>
-            <li>#contactYhteys</a></li>
-        </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Miko Gehör</div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#hero" class="nav-link">Koti</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">Tietoja</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projektit</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Yhteydenotto</a></li>
+            </ul>
+        </div>
     </nav>
-</header>
 
-<!-- HERO -->
-<section id="hero" class="fade-in">
-    <div class="container">
-        <h1>Miko Markus Kristian Gehör</h1>
-        <p>miko.gehor@gmail.com</p>
-        <p>Kiinnostuksen kohteet: Tietokoneet, teknologia</p>
-    </div>
-</section>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content fade-in">
+            <h1>Miko Markus Kristian Gehör</h1>
+            <p class="hero-subtitle">Ohjelmistokehittäjä & Teknologia-intoilija</p>
+            <p class="hero-description">
+                Opiskelen ohjelmistokehitystä ja olen kiinnostunut luomaan moderneja digitaalisia ratkaisuja.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Näytä projektit</a>
+                <a href="#contact" class="btn btn-secondary">Ota yhteyttä</a>
+            </div>
+        </div>
+        <div class="hero-image fade-in">
+            <img src="img/hero-placeholder.jpg" alt="Portfolio kuva">
+        </div>
+    </section>
 
-<!-- ABOUT -->
-<section id="about" class="fade-in">
-    <div class="container">
-        <h2>Tietoja minusta</h2>
-        <p>
-            Olen ohjelmistokehityksen opiskelija ja olen opetellut pythonin 
-            koodauskieltä. Olen innokas ja nopea oppimaan uusia asioita. Olen myös 
-            ahkera työntekijä ja teen minulle annetut työtehtävät.
-        </p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Tietoja minusta</h2>
+            
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Kuka olen?</h3>
+                    <p>
+                        Olen ohjelmistokehityksen opiskelija ja olen opetellut Python-koodauskieltä. Olen innokas ja nopea 
+                        oppimaan uusia asioita. Olen myös ahkera työntekijä ja teen minulle annetut työtehtävät 
+                        ammattitaidolla.
+                    </p>
+                    <p>
+                        Olen kiinnostunut tietokoneista ja kaikenlaisesta muusta teknologiasta. Koodaaminen on minulle 
+                        intohimo, ja haluan jatkaa oppimista ja kehittymistä tässä alalla.
+                    </p>
+                </div>
 
-        <p>
-            Olen kiinnostunut tietokoneista ja kaikenlaisesta muusta teknologiasta. 
-            Olen myös kiinnostunut koodaamisesta ja sen oppimisesta.
-        </p>
-    </div>
-</section>
+                <div class="about-grid">
+                    <div class="about-card fade-in">
+                        <h3>📚 Koulutus</h3>
+                        <ul>
+                            <li><strong>Hintan koulu</strong> - Alakoulu</li>
+                            <li><strong>Laanilan yläaste</strong> - Yläkoulu</li>
+                            <li><strong>OSAO</strong> - Tieto- ja viestintätekniikka (Ohjelmistokehittäjä)</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-card fade-in">
+                        <h3>💼 Työkokemus</h3>
+                        <ul>
+                            <li><strong>Ravintola Nallikari</strong> - Kesätyöt & TET-jakso</li>
+                            <li><strong>Bistoria Patio</strong> - Kesätyöt</li>
+                            <li>Asiakaspalvelu ja ravintola-alan perustaidot</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-card fade-in">
+                        <h3>🎯 Osaaminen</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>HTML & CSS</li>
+                            <li>JavaScript</li>
+                            <li>Asiakaspalvelu</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-card fade-in">
+                        <h3>🌟 Mielenkiinnot</h3>
+                        <ul>
+                            <li>Tietokoneet</li>
+                            <li>Teknologia</li>
+                            <li>Koodaaminen</li>
+                            <li>Oppiminen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projektit</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="img/verdant-robot.jpg" alt="Verdant Robot">
+                    </div>
+                    <div class="project-content">
+                        <h3>Verdant - Puutarha-robotti</h3>
+                        <p class="project-category">Laiteprojekti</p>
+                        <p class="project-description">
+                            Verdant on puutarhanhoito-robotti, joka on suunniteltu auttamaan puutarhan 
+                            ylläpidossa. Projektissa olen kehittänyt ideoita osien, toimintojen ja käyttöliittymän 
+                            suhteen.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature">Suunnittelu</span>
+                            <span class="feature">Ideaintegraatio</span>
+                            <span class="feature">Kehitys</span>
+                        </div>
+                        <p class="project-status">🚀 Aktiivisessa kehityksessä</p>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="img/project-placeholder-1.jpg" alt="Projekti 1">
+                    </div>
+                    <div class="project-content">
+                        <h3>Python-sovellukset</h3>
+                        <p class="project-category">Ohjelmistokehitys</p>
+                        <p class="project-description">
+                            Erilaisia Python-sovelluksia ja skriptejä, joita olen oppinut kurssilla ja 
+                            harjoitusvaraston kautta.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature">Python</span>
+                            <span class="feature">Oppiminen</span>
+                            <span class="feature">Harjoitukset</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="img/project-placeholder-2.jpg" alt="Projekti 2">
+                    </div>
+                    <div class="project-content">
+                        <h3>Web-projektit</h3>
+                        <p class="project-category">Web-kehitys</p>
+                        <p class="project-description">
+                            Web-sovelluksia ja sivustoja, joita olen kehittänyt HTML:n, CSS:n ja JavaScriptin avulla.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature">HTML</span>
+                            <span class="feature">CSS</span>
+                            <span class="feature">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Ota yhteyttä</h2>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info fade-in">
+                    <h3>Ottaatko minuun yhteyttä?</h3>
+                    <p>Olen kiinnostunut uusista projekteista ja yhteistyömahdollisuuksista. 
+                    Voit ottaa minuun yhteyttä sähköpostitse tai täyttämällä alla olevan lomakkeen.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <div>
+                                <p class="contact-label">Sähköposti</p>
+                                <p><a href="mailto:miko.gehor@gmail.com">miko.gehor@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form fade-in" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nimesi</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Sähköpostisi</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Aihe</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Viestisi</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Lähetä viesti</button>
+                    <p class="form-note" id="formMessage"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Miko Gehör. Kaikki oikeudet pidätetään.</p>
+            <p>Rakennettu HTML, CSS ja JavaScriptillä ❤️</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
 
 <!-- EDUCATION -->
 <section id="education" class="fade-in">
@@ -96,22 +277,4 @@
         <p>
             Idea miltä robotti voisi näyttää – tulen vielä kehittämään ideoitani tulevaisuudessa.
         </p>
-    </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact" class="fade-in">
-    <div class="container">
-        <h2>Ota yhteyttä</h2>
-        <form>
-            <input type="text" placeholder="Nimesi" required>
-            <input type="email" placeholder="Sähköposti" required>
-            <textarea placeholder="Viesti" required></textarea>
-            <button class="btn" type="submit">Lähetä</button>
-        </form>
-    </div>
-</section>
-
-assets/js/main.js</script>
-</body>
-</html>

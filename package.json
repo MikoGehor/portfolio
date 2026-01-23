@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Miko Gehör - Moderni portfolio-sivusto",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",
+    "build": "echo 'Build script not needed for static site'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "portfolio",
+    "ohjelmistokehitys",
+    "web",
+    "responsive"
+  ],
+  "author": "Miko Gehör",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
