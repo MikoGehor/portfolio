@@ -1,4 +1,11 @@
 // ========================
+// EMAIL CONFIGURATION
+// ========================
+
+// Initialize EmailJS with your public key
+emailjs.init('VGxWJr3wH61aWAGtu'); // EmailJS public key
+
+// ========================
 // SMOOTH SCROLL & ANIMATIONS
 // ========================
 
@@ -75,34 +82,52 @@ function handleFormSubmit(e) {
         return;
     }
 
-    // Simulate form submission
+    // Show loading message
+    showFormMessage('Lähetetään viestia...', 'success');
+
+    // Prepare email data
     const formData = {
-        name: name,
-        email: email,
+        to_email: 'miko.gehor@gmail.com',
+        from_email: email,
+        from_name: name,
         subject: subject,
         message: message,
+        user_email: email,
         timestamp: new Date().toLocaleString('fi-FI')
     };
 
-    // Log to console (in real application, this would be sent to a server)
-    console.log('Lomakkeen data:', formData);
+    // Send email using EmailJS
+    emailjs.send('service_portfolio', 'template_portfolio', formData)
+        .then(function(response) {
+            console.log('Sähköposti lähetetty onnistuneesti!', response);
+            
+            // Show success message
+            showFormMessage('✓ Kiitos viestistäsi! Vastaan sinulle pian.', 'success');
 
-    // Store in localStorage for demonstration
+            // Reset form
+            document.getElementById('contactForm').reset();
+
+            // Clear message after 5 seconds
+            setTimeout(() => {
+                formMessage.textContent = '';
+                formMessage.classList.remove('success', 'error');
+            }, 5000);
+        })
+        .catch(function(error) {
+            console.error('Virhe sähköpostin lähetyksessä:', error);
+            showFormMessage('Virhe viestin lähetyksessä. Yritä myöhemmin uudelleen.', 'error');
+
+            // Clear error message after 5 seconds
+            setTimeout(() => {
+                formMessage.textContent = '';
+                formMessage.classList.remove('success', 'error');
+            }, 5000);
+        });
+
+    // Store in localStorage for backup
     let submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
     submissions.push(formData);
     localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
-
-    // Show success message
-    showFormMessage('✓ Kiitos viestistäsi! Vastaan sinulle pian.', 'success');
-
-    // Reset form
-    document.getElementById('contactForm').reset();
-
-    // Clear message after 5 seconds
-    setTimeout(() => {
-        formMessage.textContent = '';
-        formMessage.classList.remove('success', 'error');
-    }, 5000);
 }
 
 function showFormMessage(message, type) {
