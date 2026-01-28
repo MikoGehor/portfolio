@@ -49,6 +49,43 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navigation Active Link
     updateActiveNavLink();
     window.addEventListener('scroll', updateActiveNavLink);
+
+    // Theme toggle: apply saved theme and wire up button
+    const themeToggle = document.getElementById('themeToggle');
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+            if (themeToggle) {
+                themeToggle.setAttribute('aria-pressed', 'true');
+                themeToggle.textContent = 'Teema: Tumma';
+            }
+        } else {
+            document.documentElement.classList.remove('dark-theme');
+            if (themeToggle) {
+                themeToggle.setAttribute('aria-pressed', 'false');
+                themeToggle.textContent = 'Teema: Vaalea';
+            }
+        }
+    }
+
+    // Load saved preference or system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        applyTheme('dark');
+    } else {
+        applyTheme('light');
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.contains('dark-theme');
+            const newTheme = isDark ? 'light' : 'dark';
+            applyTheme(newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
 });
 
 // ========================
