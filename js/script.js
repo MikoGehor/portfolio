@@ -1,11 +1,4 @@
 // ========================
-// EMAIL CONFIGURATION
-// ========================
-
-// Initialize EmailJS with your public key
-emailjs.init('VGxWJr3wH61aWAGtu'); // EmailJS public key
-
-// ========================
 // SMOOTH SCROLL & ANIMATIONS
 // ========================
 
@@ -85,48 +78,56 @@ function handleFormSubmit(e) {
     // Show loading message
     showFormMessage('Lähetetään viestia...', 'success');
 
-    // Prepare email data
-    const formData = {
-        to_email: 'miko.gehor@gmail.com',
-        from_email: email,
-        from_name: name,
-        subject: subject,
-        message: message,
-        user_email: email,
-        timestamp: new Date().toLocaleString('fi-FI')
-    };
+    // Prepare data for Formspree
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('subject', subject);
+    formData.append('message', message);
 
-    // Send email using EmailJS
-    emailjs.send('service_portfolio', 'template_portfolio', formData)
-        .then(function(response) {
-            console.log('Sähköposti lähetetty onnistuneesti!', response);
-            
-            // Show success message
+    // Send to Formspree
+    fetch('https://formspree.io/f/xyzjxzoj', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Sähköposti lähetetty onnistuneesti!');
             showFormMessage('✓ Kiitos viestistäsi! Vastaan sinulle pian.', 'success');
-
-            // Reset form
             document.getElementById('contactForm').reset();
-
+            
             // Clear message after 5 seconds
             setTimeout(() => {
                 formMessage.textContent = '';
                 formMessage.classList.remove('success', 'error');
             }, 5000);
-        })
-        .catch(function(error) {
-            console.error('Virhe sähköpostin lähetyksessä:', error);
-            showFormMessage('Virhe viestin lähetyksessä. Yritä myöhemmin uudelleen.', 'error');
-
-            // Clear error message after 5 seconds
-            setTimeout(() => {
-                formMessage.textContent = '';
-                formMessage.classList.remove('success', 'error');
-            }, 5000);
-        });
+        } else {
+            throw new Error('Vastaus ei ollut ok');
+        }
+    })
+    .catch(error => {
+        console.error('Virhe sähköpostin lähetyksessä:', error);
+        showFormMessage('Virhe viestin lähetyksessä. Yritä myöhemmin uudelleen.', 'error');
+        
+        // Clear error message after 5 seconds
+        setTimeout(() => {
+            formMessage.textContent = '';
+            formMessage.classList.remove('success', 'error');
+        }, 5000);
+    });
 
     // Store in localStorage for backup
     let submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-    submissions.push(formData);
+    submissions.push({
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+        timestamp: new Date().toLocaleString('fi-FI')
+    });
     localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
 }
 
