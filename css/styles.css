@@ -247,9 +247,16 @@ a:hover {
 
 /* Theme toggle button tweaks */
 .btn-theme {
-    padding: 0.5rem 0.9rem;
+    padding: 0.4rem 0.8rem;
     font-size: 0.95rem;
     border-radius: 8px;
+    border: none; /* remove visible border */
+    background-color: transparent;
+    color: var(--primary-color);
+    box-shadow: none;
+}
+.btn-theme:hover {
+    background-color: rgba(37, 99, 235, 0.06);
 }
 
 /* Dark theme variables and overrides */
