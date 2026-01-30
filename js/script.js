@@ -59,8 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // ========================
 
 function handleFormSubmit(e) {
-    e.preventDefault();
-
     const formMessage = document.getElementById('formMessage');
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -69,58 +67,19 @@ function handleFormSubmit(e) {
 
     // Validation
     if (!name || !email || !subject || !message) {
+        e.preventDefault();
         showFormMessage('Täytä kaikki kentät!', 'error');
         return;
     }
 
     if (!isValidEmail(email)) {
+        e.preventDefault();
         showFormMessage('Anna kelvollinen sähköpostiosoite!', 'error');
         return;
     }
 
     // Show loading message
     showFormMessage('Lähetetään viestia...', 'success');
-
-    // Prepare data for Formspree
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('subject', subject);
-    formData.append('message', message);
-
-    // Send to Formspree
-    fetch('https://formspree.io/f/xyzjxzoj', {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log('Sähköposti lähetetty onnistuneesti!');
-            showFormMessage('✓ Kiitos viestistäsi! Vastaan sinulle pian.', 'success');
-            document.getElementById('contactForm').reset();
-            
-            // Clear message after 5 seconds
-            setTimeout(() => {
-                formMessage.textContent = '';
-                formMessage.classList.remove('success', 'error');
-            }, 5000);
-        } else {
-            throw new Error('Vastaus ei ollut ok');
-        }
-    })
-    .catch(error => {
-        console.error('Virhe sähköpostin lähetyksessä:', error);
-        showFormMessage('Virhe viestin lähetyksessä. Yritä myöhemmin uudelleen.', 'error');
-        
-        // Clear error message after 5 seconds
-        setTimeout(() => {
-            formMessage.textContent = '';
-            formMessage.classList.remove('success', 'error');
-        }, 5000);
-    });
 
     // Store in localStorage for backup
     let submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
@@ -132,6 +91,8 @@ function handleFormSubmit(e) {
         timestamp: new Date().toLocaleString('fi-FI')
     });
     localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
+
+    // Form will submit to FormSubmit.co automatically
 }
 
 function showFormMessage(message, type) {

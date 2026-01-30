@@ -162,7 +162,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form fade-in" id="contactForm">
+                <form class="contact-form fade-in" id="contactForm" action="https://formsubmit.co/miko.gehor@gmail.com" method="POST">
                     <div class="form-group">
                         <label for="name">Nimesi</label>
                         <input type="text" id="name" name="name" required>
@@ -183,6 +183,7 @@
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
 
+                    <input type="hidden" name="_captcha" value="false">
                     <button type="submit" class="btn btn-primary">Lähetä viesti</button>
                     <p class="form-note" id="formMessage"></p>
                 </form>
