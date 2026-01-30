@@ -127,6 +127,7 @@
                             <span class="feature">Kehitys</span>
                         </div>
                         <p class="project-status">🚀 Aktiivisessa kehityksessä</p>
+                        <button class="btn btn-secondary" onclick="openProjectModal('verdant')">Lue lisää</button>
                     </div>
                 </div>
             </div>
@@ -190,6 +191,14 @@
             </div>
         </div>
     </section>
+
+    <!-- Project Details Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProjectModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

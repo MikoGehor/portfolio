@@ -214,4 +214,82 @@ if ('IntersectionObserver' in window) {
     });
 }
 
+// ========================
+// PROJECT MODAL
+// ========================
+
+const projectDetails = {
+    verdant: {
+        title: 'Verdant - Puutarha-robotti',
+        content: `
+            <h2>Verdant - Puutarha-robotti</h2>
+            
+            <h3>Projektista</h3>
+            <p>Verdant on innovatiivinen puutarjanhoito-robotti, joka on suunniteltu auttamaan puutarhan ylläpidossa älykkäiden sensoritietojen ja automaatioiden avulla.</p>
+            
+            <h3>Tavoitteet</h3>
+            <ul>
+                <li><strong>Automaatio:</strong> Puutarhan hoitotoimenpiteiden automatisointi</li>
+                <li><strong>Älykkyys:</strong> Sensori-pohjaisen päätöksenteon käyttö</li>
+                <li><strong>Käyttäjäystävällisyys:</strong> Intuitiivinen käyttöliittymä</li>
+                <li><strong>Kestävyys:</strong> Ympäristöystävälliset ratkaisut</li>
+            </ul>
+            
+            <h3>Ominaisuudet</h3>
+            <ul>
+                <li>Automaattinen kasteluohjaus</li>
+                <li>Kasvikasvun monitorointi</li>
+                <li>Lämpötilan ja kosteuden mittaus</li>
+                <li>Mobiilisovellus ohjausjärjestelmälle</li>
+                <li>Energiatehokkaita aurinkopaneeleita</li>
+            </ul>
+            
+            <h3>Teknologia</h3>
+            <p>Projektissa käytetään:</p>
+            <ul>
+                <li>Arduino/Raspberry Pi mikro-ohjaimella</li>
+                <li>IoT-sensoreita (lämpötila, kosteus, valoisuus)</li>
+                <li>Python-pohjaiset kontrollisoftit</li>
+                <li>Web-pohjainen hallintapaneeli</li>
+            </ul>
+            
+            <h3>Status</h3>
+            <p><strong>🚀 Aktiivisessa kehityksessä</strong></p>
+            <p>Projekti on edelleen kehityksessä ja uusia ominaisuuksia lisätään säännöllisesti.</p>
+        `
+    }
+};
+
+function openProjectModal(projectId) {
+    const modal = document.getElementById('projectModal');
+    const modalBody = document.getElementById('modalBody');
+    
+    if (projectDetails[projectId]) {
+        modalBody.innerHTML = projectDetails[projectId].content;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Sulje modaali klikkaamalla sen ulkopuolella
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('projectModal');
+    if (event.target === modal) {
+        closeProjectModal();
+    }
+});
+
+// Sulje modaali ESC-näppäimellä
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeProjectModal();
+    }
+});
+
 console.log('Portfolio-sivusto ladattu onnistuneesti! 🚀');
