@@ -225,37 +225,48 @@ const projectDetails = {
             <h2>Verdant - Puutarha-robotti</h2>
             
             <h3>Projektista</h3>
-            <p>Verdant on innovatiivinen puutarjanhoito-robotti, joka on suunniteltu auttamaan puutarhan ylläpidossa älykkäiden sensoritietojen ja automaatioiden avulla.</p>
+            <p>Verdant on älykkäästä puutarhanhoito-robotti, joka automatisoida puutarhan ylläpitoa ja huolehtii kasveista päivittäin.</p>
             
-            <h3>Tavoitteet</h3>
+            <h3>Tekniset Tiedot</h3>
             <ul>
-                <li><strong>Automaatio:</strong> Puutarhan hoitotoimenpiteiden automatisointi</li>
-                <li><strong>Älykkyys:</strong> Sensori-pohjaisen päätöksenteon käyttö</li>
-                <li><strong>Käyttäjäystävällisyys:</strong> Intuitiivinen käyttöliittymä</li>
-                <li><strong>Kestävyys:</strong> Ympäristöystävälliset ratkaisut</li>
+                <li><strong>Toiminta-aika:</strong> 3-6 tuntia päivässä riittää useimpiin puutarhatöihin</li>
+                <li><strong>Latausaika:</strong> 2-4 tuntia, mielellään yöllä tai taukojen aikana</li>
+                <li><strong>Akku:</strong> Litiumioniakku, kapasiteetti 300-600 Wh</li>
             </ul>
             
-            <h3>Ominaisuudet</h3>
+            <h3>Pääominaisuudet</h3>
             <ul>
-                <li>Automaattinen kasteluohjaus</li>
-                <li>Kasvikasvun monitorointi</li>
-                <li>Lämpötilan ja kosteuden mittaus</li>
-                <li>Mobiilisovellus ohjausjärjestelmälle</li>
-                <li>Energiatehokkaita aurinkopaneeleita</li>
+                <li><strong>Kasvien tunnistus kameralla:</strong> Verdant käyttää kameraa tunnistamaan eri kasveja automatisoitesti. Tämä auttaa esimerkiksi hoidon räätälöinnissä kasvien mukaan.</li>
+                <li><strong>Automaattinen kastelu ja lannoitus:</strong> Puutarhajärjestelmä huolehtii kasvien kastelusta ja lannoituksesta automatisoitesti, säätöjen ja kasvien tarpeiden mukaan.</li>
+                <li><strong>Tuholaisten torjunta luonnonmukaisesti:</strong> Tuholaisten torjunta tapahtuu ilman kemikaaleita, biologisiin menetelmiin kuten hyötelöihin perustuen.</li>
+                <li><strong>Reaaliaikainen puutarhakertta ja mobiilisovellus:</strong> Käyttäjällä on käytössään sovellus, joka näyttää puutarhan tilan reaaliajassa. Sovelluksessa voi seurata kasvien sijaintia, hoitotarpeita ja mahdollisia ongelmia.</li>
             </ul>
             
-            <h3>Teknologia</h3>
-            <p>Projektissa käytetään:</p>
+            <h3>Turvallisuus</h3>
+            <p>Robotti on suunniteltu turvalliseksi ja vastuulliseksi työvälineeksi ympäristöissä, joissa liikkuu lapsia, eläimiä ja muita ihmisiä. Älykkäät tunnistusominaisuudet ja reaktiojärjestelmä tekevät robottista luotettavan avustajan puutarhatyöhön.</p>
             <ul>
-                <li>Arduino/Raspberry Pi mikro-ohjaimella</li>
-                <li>IoT-sensoreita (lämpötila, kosteus, valoisuus)</li>
-                <li>Python-pohjaiset kontrollisoftit</li>
-                <li>Web-pohjainen hallintapaneeli</li>
+                <li><strong>Hallittu kemikaalien käyttö:</strong> Robotti ei käytä kemikaaleja tai lannoitteita ilman käyttäjän nimenomaista lupaa. Mobiilisovelluksella voidaan tarkasti määrittää, missä ja milloin aineita saa käyttää.</li>
+                <li><strong>Ympäristönsuojelu:</strong> Sovellus varmistaa, että kemikalaalit levitetään vain tarvittaessa ja oikeissa paikoissa, mikä estää vahingollisia päästöjä ympäristöön.</li>
+            </ul>
+            
+            <h3>Käyttöliittymä ja Kamerat</h3>
+            <p><strong>RGB-kamera:</strong> Verdant tunnistaa kasvien muodon, värin ja rakenteen. Soveltuu hyvin lajien erotteluun ja terveydentilan arviointiin kamera-analyysin avulla.</p>
+            <p><strong>Multispektrikamera:</strong> Näkee useita valon aallonpituuksia, joita ihmissilmä ei havaitse. Auttaa tunnistamaan kasvien stressiä, vedenpuutetta ja tauteja varhaisessa vaiheessa.</p>
+            <p><strong>Lämpökamera:</strong> Mittaa kasvien lämpötilaa, mikä voi paljastaa kastelutarpeen tai sairauksia ennen kuin ne näkyvät silmällä.</p>
+            
+            <h3>Teknologia ja Komponentit</h3>
+            <ul>
+                <li><strong>Harjattomat tasavirtamoottorit:</strong> Pyörittävät robotin kumipyöriä. Tehokkaat, hiljaiset ja pitkäkestoiset.</li>
+                <li><strong>IMU-anturi:</strong> Mittaa kallistusta ja liikettä, auttaa pitämään robotin tasapainossa ja stabiloinnissa.</li>
+                <li><strong>Encoderit:</strong> Mittaavat pyörien pyörimistä ja auttavat navigoinnissa sekä etäisyyksien laskemisessa.</li>
+                <li><strong>Peristaltinen pumppu:</strong> Pumppaa vettä tai lannoitetta kasville tarkasti ja turvallisesti.</li>
+                <li><strong>Solenoidisventtiili:</strong> Ohjaa nesteen virtausta ja hallitsee veden sekä lannoitteen syöttöä.</li>
+                <li><strong>Sumutinpumppu:</strong> Suihkuttaa torjunta-ainetta kasville tasaisesti ja tehokkasti.</li>
+                <li><strong>Servo:</strong> Suuntaa sumuttimen oikeaan kohtaan ja hallitsee ruiskutussuuntaa.</li>
             </ul>
             
             <h3>Status</h3>
             <p><strong>🚀 Aktiivisessa kehityksessä</strong></p>
-            <p>Projekti on edelleen kehityksessä ja uusia ominaisuuksia lisätään säännöllisesti.</p>
         `
     }
 };
