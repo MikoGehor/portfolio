@@ -459,14 +459,13 @@ a:hover {
 }
 
 .project-image img {
-    width: 100%;
-    height: 100%;
+    width: 120%;
+    height: 120%;
     object-fit: contain;
     object-position: center;
     transition: var(--transition);
     position: relative;
     z-index: 0;
-    padding: 20px;
 }
 
 .project-card:hover .project-image img {
